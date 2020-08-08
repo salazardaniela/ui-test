@@ -10,6 +10,8 @@ const Home = ({ name, ...props }) => {
   return (
     <div>
       <NavBar />
+
+      Text
     </div>
   );
 };
