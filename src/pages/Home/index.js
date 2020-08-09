@@ -7,6 +7,8 @@ import Banner from '../../components/banner';
 import InfoBox from '../../components/info-box';
 import Headline from '../../components/headline';
 import Candidate from '../../components/candidate';
+import Submit from '../../components/submit';
+import Footer from '../../components/footer';
 
 // MockData
 import candidatesMock from '../../mockData/candidates.json'
@@ -24,6 +26,8 @@ const Home = () => {
             <Candidate key={`character-${idx}`} item={character} />
           ))}
         </div>
+        <Submit />
+        <Footer />
       </div>
     </div>
   );
