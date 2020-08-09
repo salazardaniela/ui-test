@@ -7,7 +7,7 @@
   color: $darknessGray;
   display: flex;
   font-family: 'Lato';
-  flex-direction: row;
+  flex-direction: column;
   margin: 20px auto;
   padding: 25px 30px;
 
@@ -28,7 +28,7 @@
     flex: 1;
     line-height: 23px;
     margin: 0;
-    padding: 0 25px;
+    padding: 25px 0;
   }
 
   .info-box-close {
@@ -39,5 +39,14 @@
     padding: 20px;
     text-indent: -9999px;
     width: 15px;
+  }
+
+  // Desktop
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+
+    .info-txt {
+      padding: 0 25px;
+    }
   }
 }

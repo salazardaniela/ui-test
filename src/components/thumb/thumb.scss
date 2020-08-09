@@ -1,9 +1,11 @@
 @import '../variables';
 
 .thumb {
-  background-color: $green;
+  align-items: center;
+  background-color: $alphaGreen;
   box-sizing: border-box;
-  display: inline-block;
+  display: flex;
+  font-family: 'Lato';
   padding: 5px;
   
   .icon {
@@ -11,11 +13,28 @@
     background: url('../../icons/thumb.png');
     background-size: contain;
     border: none;
-    display: block;
     height: 18px;
-    margin: auto;
     transform: rotate(180deg);
     width: 18px;
+  }
+
+  .thumb-percentage {
+    color: $white;
+    font-weight: 300;
+    font-size: 30px;
+    margin: 0 0 0 10px;
+
+    span {
+      font-size: 21px;
+    }
+  }
+
+  &.small {
+    background-color: $alphaGreen;
+
+    &.up {
+      background-color: $alphaOrange;
+    }
   }
 
   &.medium {
@@ -28,7 +47,6 @@
   }
 
   &.big {
-    background-color: $alphaGreen;
     padding: 20px;
 
     .icon {
@@ -38,10 +56,11 @@
   }
 
   &.up {
-    background-color: $orange;
+    background-color: $alphaOrange;
+    flex-direction: row-reverse;
 
-    &.big {
-      background-color: $alphaOrange;
+    .thumb-percentage {
+      margin: 0 10px 0 0;
     }
 
     .icon {

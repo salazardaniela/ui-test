@@ -38,6 +38,11 @@
   .thumb {
     display: inline-block;
     width: 50%;
+
+    .icon {
+      display: block;
+      margin: auto;
+    }
   }
 
   a {

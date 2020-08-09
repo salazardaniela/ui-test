@@ -1,11 +1,11 @@
 @import '../variables';
 
 .navBar {
-  background: linear-gradient(180deg, rgba(51, 51, 51, .8) 0%, rgba(51, 51, 51, 0) 93%);
+  background: linear-gradient(180deg, rgba(51, 51, 51, .9) 0%, rgba(51, 51, 51, 0.1) 100%);
   font-family: 'lato';
   text-align: center;
   top: 0;
-  padding-bottom: 30px;
+  padding-bottom: 12px;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -48,7 +48,8 @@
   // Desktop
   @media screen and (min-width: $desktop) {
     background: linear-gradient(180deg, rgba(51, 51, 51, .8) 0%, rgba(51, 51, 51, 0) 83%);
-    
+    padding-bottom: 30px;
+
     .main-wrapper {
       align-items: center;
       display: flex;

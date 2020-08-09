@@ -17,5 +17,11 @@ storiesOf('Thumb', module)
   ))
   .add('Down Icon - Big', () => (
     <Thumb type="down" size="big" />
+  ))
+  .add('Up Icon - Big - Percentages', () => (
+    <Thumb type="up" size="big" showPercentage />
+  ))
+  .add('Down Icon - Big - Percentages', () => (
+    <Thumb type="down" size="medium" showPercentage />
   ));
 
