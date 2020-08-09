@@ -2,7 +2,7 @@ import React from 'react';
 import './navbar.scss';
 
 const NavBar = () => (
-  <section className="navBar">
+  <section className="navBar" data-testid="navBar">
     <div className="main-wrapper">
       <a className="site" href="/">Rule of Thumb.</a>
       <div className="container-actions">

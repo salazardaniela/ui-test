@@ -1,15 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Readme from './README.md';
-import NavBar from '.';
+import CountdownTimer from '.';
 
-storiesOf('NavBar', module)
+storiesOf('Countdown', module)
   .addParameters({
     readme: {
       sidebar: Readme,
     },
   })
-  .add('Default', () => (
-    <NavBar />
+  .add('Countdown Days', () => (
+    <CountdownTimer futureDate="2020-09-01" />
   ));
-

@@ -1,0 +1,43 @@
+@import '../variables';
+
+.info-box {
+  align-items: center;
+  background-color: $gray;
+  box-sizing: border-box;
+  color: $darknessGray;
+  display: flex;
+  font-family: 'Lato';
+  flex-direction: row;
+  margin: 20px auto;
+  padding: 25px 30px;
+
+  .info-title {
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0;
+
+    span {
+      display: block;
+      font-size: 38px;
+      font-weight: bold;
+    }
+  }
+
+  .info-txt {
+    font-size: 15px;
+    flex: 1;
+    line-height: 23px;
+    margin: 0;
+    padding: 0 25px;
+  }
+
+  .info-box-close {
+    appearance: none;
+    background: url('../../icons/close.png') no-repeat center;
+    border: none;
+    height: 15px;
+    padding: 20px;
+    text-indent: -9999px;
+    width: 15px;
+  }
+}

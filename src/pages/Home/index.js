@@ -1,27 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // Components
 import NavBar from '../../components/nav-bar';
+import Banner from '../../components/banner';
+import InfoBox from '../../components/info-box';
+import Headline from '../../components/headline';
 
-const Home = ({ name, ...props }) => {
-  console.log(props, name);
-
+const Home = () => {
   return (
-    <div>
+    <div data-testid="home-page">
       <NavBar />
-
-      Text
+      <Banner />
+      <div className="main-wrapper">
+        <InfoBox />
+        <Headline title="Previous Rulings" />
+      </div>
     </div>
   );
-};
-
-Home.propTypes = {
-  name: PropTypes.string,
-};
-
-Home.defaultProps = {
-  name: '',
 };
 
 Home.displayName = 'Home Page';

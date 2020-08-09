@@ -1,15 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Readme from './README.md';
-import NavBar from '.';
+import Banner from '.';
 
-storiesOf('NavBar', module)
+storiesOf('Banner', module)
   .addParameters({
     readme: {
       sidebar: Readme,
     },
   })
   .add('Default', () => (
-    <NavBar />
+    <Banner />
   ));
 

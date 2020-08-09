@@ -5,6 +5,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
+    "@testing-library/react-hooks": "^3.4.1",
     "@testing-library/user-event": "^7.1.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -42,6 +43,28 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^5.3.19",
-    "eslint-loader": "^4.0.2"
+    "eslint-loader": "^4.0.2",
+    "react-test-renderer": "^16.13.1"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 70,
+        "branches": 70,
+        "functions": 70,
+        "lines": 70
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/index.js",
+      "!src/**/*.stories.{js,jsx}",
+      "!src/**/styled.{js,jsx}",
+      "!src/**/**/styled.{js,jsx}"
+    ]
   }
 }

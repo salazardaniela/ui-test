@@ -4,7 +4,11 @@
   background: linear-gradient(180deg, rgba(51, 51, 51, .8) 0%, rgba(51, 51, 51, 0) 93%);
   font-family: 'lato';
   text-align: center;
+  top: 0;
   padding-bottom: 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 
   a {
     color: $white;

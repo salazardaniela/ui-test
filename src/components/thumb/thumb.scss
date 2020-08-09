@@ -1,0 +1,51 @@
+@import '../variables';
+
+.thumb {
+  background-color: $green;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 5px;
+  
+  .icon {
+    appearance: none;
+    background: url('../../icons/thumb.png');
+    background-size: contain;
+    border: none;
+    display: block;
+    height: 18px;
+    margin: auto;
+    transform: rotate(180deg);
+    width: 18px;
+  }
+
+  &.medium {
+    padding: 10px;
+
+    .icon {
+      height: 28px;
+      width: 28px;
+    }
+  }
+
+  &.big {
+    background-color: $alphaGreen;
+    padding: 20px;
+
+    .icon {
+      height: 36px;
+      width: 36px;
+    }
+  }
+
+  &.up {
+    background-color: $orange;
+
+    &.big {
+      background-color: $alphaOrange;
+    }
+
+    .icon {
+      transform: rotateX(0);
+    }
+  }
+}
