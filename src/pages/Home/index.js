@@ -22,7 +22,11 @@ const Home = () => (
       <Headline title="Previous Rulings" />
       <div className="grid-candidates">
         {candidatesMock.items.map((character, idx) => (
-          <Candidate key={`character-${idx}`} item={character} />
+          <Candidate
+            data-testid={`character-${idx}`}
+            key={`character-${idx}`}
+            item={character}
+          />
         ))}
       </div>
       <Submit />

@@ -12,7 +12,7 @@ import Thumb from '../thumb';
  * Percentages Component
  * @param {Object} {} Component properties
  */
-const Candidate = ({ item, fullVersion, values }) => {
+const Candidate = ({ item, fullVersion }) => {
   const [result, setResult] = useState('up');
 
   return (
@@ -35,9 +35,7 @@ const Candidate = ({ item, fullVersion, values }) => {
           <Thumb size="small" type={result} />
         </div>
       </div>
-      {values && (
-        <Percentages values={values} setResult={setResult} />
-      )}
+      <Percentages idName={item.id} setHighestValue={setResult} />
     </div>
   );
 };
@@ -53,12 +51,8 @@ Candidate.propTypes = {
     time: PropTypes.string,
     category: PropTypes.string,
     url: PropTypes.string,
+    id: PropTypes.string,
   }).isRequired,
-  values: PropTypes.shape({
-    up: PropTypes.number,
-    down: PropTypes.number,
-    total: PropTypes.number,
-  }),
   fullVersion: PropTypes.bool,
 };
 
@@ -67,11 +61,6 @@ Candidate.propTypes = {
  */
 Candidate.defaultProps = {
   fullVersion: true,
-  values: {
-    up: 1,
-    down: 1,
-    total: 2,
-  },
 };
 
 Candidate.displayName = 'Candidate Component';

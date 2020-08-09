@@ -31,8 +31,8 @@ storiesOf('Candidate', module)
     },
   })
   .add('Default - full version', () => (
-    <Candidate item={item} values={votes} />
+    <Candidate item={{ ...item, id: 'MarkFull' }} values={votes} />
   ))
   .add('Non full version', () => (
-    <Candidate item={item} fullVersion={false} values={votesUp} />
+    <Candidate item={{ ...item, id: 'MarkNonFull' }} fullVersion={false} values={votesUp} />
   ));

@@ -1,7 +1,23 @@
-import isEmpty from 'lodash/isEmpty';
+import isNull from 'lodash/isNull';
 
 const nameStorage = 'votes';
-const getStorage = localStorage.getItem(nameStorage);
+
+/**
+ * setResults function
+ * @param {Object} {
+ *  itemResults: {Object} with results in each polling
+ * }
+ */
+export const setResults = ({ itemResults }) => {
+  let results = {};
+
+  if (!isNull(localStorage.getItem(nameStorage))) {
+    results = JSON.parse(localStorage.getItem(nameStorage));
+  }
+
+  results = itemResults;
+  localStorage.setItem(nameStorage, JSON.stringify(results));
+};
 
 /**
  * getResults function
@@ -10,37 +26,25 @@ const getStorage = localStorage.getItem(nameStorage);
  * }
  */
 export const getResults = ({ idName }) => {
-  let actualValues = {
+  const initialValues = {};
+  initialValues[idName] = {
     up: 1,
     down: 1,
     total: 2,
   };
+  let actualValues = {};
 
-  if (!isEmpty(getStorage)) {
-    actualValues = JSON.parse(getStorage);
-    return actualValues[idName];
+  if (localStorage.getItem('votes')) {
+    actualValues = JSON.parse(localStorage.getItem(nameStorage));
+
+    if (actualValues[idName]) {
+      return actualValues;
+    }
+
+    return { ...initialValues, ...actualValues };
   }
 
-  return actualValues;
-};
+  setResults({ itemResults: initialValues });
 
-/**
- * setResults function
- * @param {Object} {
- *  idName: 'key to identify each result value'
- *  itemResults: {Object} with results in each polling
- * }
- */
-export const setResults = ({ idName, itemResults }) => {
-  let results = {
-    idName: itemResults,
-  };
-
-  if (!isEmpty(getStorage)) {
-    results = JSON.parse(getStorage);
-
-    results[idName] = itemResults;
-  }
-
-  localStorage.setItem(nameStorage, JSON.stringify(results));
+  return initialValues;
 };

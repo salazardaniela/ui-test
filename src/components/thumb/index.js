@@ -11,15 +11,20 @@ import './thumb.scss';
  * value: 'percentage number'
  */
 const Thumb = ({
-  type, size, showPercentage, value,
+  type, size, showPercentage, value, setNewValue,
 }) => (
-  <button data-testid="thumb" className={`thumb ${type} ${size}`} type="button">
+  <button
+    data-testid="thumb"
+    className={`thumb ${type} ${size}`}
+    type="button"
+    onClick={() => setNewValue && setNewValue(type)}
+  >
     <span className="icon-thumb" />
     {showPercentage && (
-      <p className="thumb-percentage">
-        {value}
-        <span>%</span>
-      </p>
+    <p className="thumb-percentage">
+      {value}
+      <span>%</span>
+    </p>
     )}
   </button>
 );
@@ -32,6 +37,7 @@ Thumb.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'big']).isRequired,
   showPercentage: PropTypes.bool,
   value: PropTypes.number,
+  setNewValue: PropTypes.func,
 };
 
 /**
@@ -40,6 +46,7 @@ Thumb.propTypes = {
 Thumb.defaultProps = {
   showPercentage: false,
   value: 50,
+  setNewValue: () => {},
 };
 
 Thumb.displayName = 'Thumb Component';

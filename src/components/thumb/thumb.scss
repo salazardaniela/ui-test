@@ -6,10 +6,20 @@
   background: $alphaGreen;
   box-sizing: border-box;
   border: none;
+  cursor: pointer;
   display: flex;
   font-family: 'Lato';
   padding: 5px;
   width: 100%;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &:active {
+    filter: saturate(2.5);
+    opacity: 1;
+  }
   
   .icon-thumb {
     background: url('../../icons/thumb.png') no-repeat center;
