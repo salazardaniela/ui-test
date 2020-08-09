@@ -1,6 +1,10 @@
 import React from 'react';
 import './navbar.scss';
 
+/**
+ * Nav Bar Static Component
+ * Non - @params
+ */
 const NavBar = () => (
   <section className="navBar" data-testid="navBar">
     <div className="main-wrapper">

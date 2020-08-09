@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import './info-box.scss';
 
+/**
+ * Info Box
+ * Non @params
+ * Action to Hide Component with close button
+ */
 const InfoBox = () => {
   const [showBox, setShowBox] = useState(true);
 

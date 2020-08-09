@@ -1,6 +1,10 @@
 import React from 'react';
 import './submit.scss';
 
+/**
+ * Subit Component
+ * Non - @params
+ */
 const Submit = () => (
   <div data-testid="submit" className="submit">
     <h4>Is there anyone else you would want us to add?</h4>

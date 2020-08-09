@@ -12,12 +12,27 @@ const item = {
   url: '/mark',
 };
 
+const votes = {
+  up: 1,
+  down: 3,
+  total: 4,
+};
+
+const votesUp = {
+  up: 3,
+  down: 1,
+  total: 4,
+};
+
 storiesOf('Candidate', module)
   .addParameters({
     readme: {
       sidebar: Readme,
     },
   })
-  .add('default', () => (
-    <Candidate item={item} />
+  .add('Default - full version', () => (
+    <Candidate item={item} values={votes} />
+  ))
+  .add('Non full version', () => (
+    <Candidate item={item} fullVersion={false} values={votesUp} />
   ));

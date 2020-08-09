@@ -1,18 +1,20 @@
 @import '../variables';
 
 .thumb {
+  appearance: none;
   align-items: center;
-  background-color: $alphaGreen;
+  background: $alphaGreen;
   box-sizing: border-box;
+  border: none;
   display: flex;
   font-family: 'Lato';
   padding: 5px;
+  width: 100%;
   
-  .icon {
-    appearance: none;
-    background: url('../../icons/thumb.png');
+  .icon-thumb {
+    background: url('../../icons/thumb.png') no-repeat center;
     background-size: contain;
-    border: none;
+    display: inline-block;
     height: 18px;
     transform: rotate(180deg);
     width: 18px;
@@ -20,6 +22,7 @@
 
   .thumb-percentage {
     color: $white;
+    display: inline-block;
     font-weight: 300;
     font-size: 30px;
     margin: 0 0 0 10px;
@@ -30,17 +33,17 @@
   }
 
   &.small {
-    background-color: $alphaGreen;
+    background-color: $green;
 
-    &.up {
-      background-color: $alphaOrange;
+    &.down {
+      background-color: $orange;
     }
   }
 
   &.medium {
     padding: 10px;
 
-    .icon {
+    .icon-thumb {
       height: 28px;
       width: 28px;
     }
@@ -49,13 +52,13 @@
   &.big {
     padding: 20px;
 
-    .icon {
+    .icon-thumb {
       height: 36px;
       width: 36px;
     }
   }
 
-  &.up {
+  &.down {
     background-color: $alphaOrange;
     flex-direction: row-reverse;
 
@@ -63,7 +66,7 @@
       margin: 0 10px 0 0;
     }
 
-    .icon {
+    .icon-thumb {
       transform: rotateX(0);
     }
   }

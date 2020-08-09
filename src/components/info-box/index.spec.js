@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
 import InfoBox from '.';
 
 describe('InfoBox', () => {
@@ -10,11 +9,14 @@ describe('InfoBox', () => {
     expect(element).toBeInTheDocument();
     const button = getByTestId('button');
     expect(button).toBeInTheDocument();
-    fireEvent.click(button);
   });
 
-  it('should change the state', () => {
-    const { result } = renderHook(() => InfoBox());
-    expect(result.current.showBox).toBe(false);
+  it('should remove component when click in close button', () => {
+    const { getByTestId } = render(<InfoBox />);
+    const element = getByTestId('info-box');
+    const button = getByTestId('button');
+    expect(element).toBeInTheDocument();
+    fireEvent.click(button);
+    expect(element).not.toBeInTheDocument();
   });
 });

@@ -1,6 +1,11 @@
 import React from 'react';
 import './footer.scss';
 
+/**
+ * Footer Component
+ * Static Component
+ * Non @params
+ */
 const Footer = () => (
   <div data-testid="footer" className="footer">
     <nav>
@@ -12,12 +17,12 @@ const Footer = () => (
     <ul>
       <li>Follow Us</li>
       <li>
-        <a className="social-icon icon-fb" href="http://facebook.com">
+        <a target="_blank" rel="noreferrer" className="social-icon icon-fb" href="http://facebook.com">
           Facebook
         </a>
       </li>
       <li>
-        <a className="social-icon icon-tw" href="http://twitter.com">
+        <a target="_blank" rel="noreferrer" className="social-icon icon-tw" href="http://twitter.com">
           Twitter
         </a>
       </li>

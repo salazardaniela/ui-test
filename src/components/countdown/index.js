@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './countdown.scss';
 
+/**
+ * Calc Days to futureDate
+ * @param {*}
+ *  futureDate : date format YYYY-MM-DD'
+ */
 const calcDaysLeft = (futureDate) => {
   const dateTo = futureDate && futureDate.split('-');
   const difference = +new Date(dateTo[0], dateTo[1] - 1, dateTo[2], '05') - +new Date();
@@ -16,6 +21,13 @@ const calcDaysLeft = (futureDate) => {
   return timeLeft.Days;
 };
 
+/**
+ * Countdown Component
+ * @param {Object} {
+ *  futureDate : 'string date format YYYY-MM-DD'
+ * }
+ */
+
 const Countdown = ({ futureDate }) => {
   const [daysLeft, setDaysLeft] = useState(0);
 
@@ -28,13 +40,15 @@ const Countdown = ({ futureDate }) => {
       <p className="comming-txt">CLOSING IN</p>
       <div className="comming-days">
         <span className="comming-txt-bold">{daysLeft}</span>
-        {' '}
         days
       </div>
     </div>
   );
 };
 
+/**
+ * Prop Types Definition
+ */
 Countdown.propTypes = {
   futureDate: PropTypes.string.isRequired,
 };
