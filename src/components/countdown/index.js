@@ -14,23 +14,25 @@ const calcDaysLeft = (futureDate) => {
   }
 
   return timeLeft.Days;
-}
+};
 
 const Countdown = ({ futureDate }) => {
   const [daysLeft, setDaysLeft] = useState(0);
-  
+
   useEffect(() => {
-    setDaysLeft(calcDaysLeft(futureDate))
-  }, [futureDate])
+    setDaysLeft(calcDaysLeft(futureDate));
+  }, [futureDate]);
 
   return (
     <div data-testid="countdown" className="countdown">
       <p className="comming-txt">CLOSING IN</p>
       <div className="comming-days">
-        <span className="comming-txt-bold">{daysLeft}</span> days
+        <span className="comming-txt-bold">{daysLeft}</span>
+        {' '}
+        days
       </div>
     </div>
-  )
+  );
 };
 
 Countdown.propTypes = {

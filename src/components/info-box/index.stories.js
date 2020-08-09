@@ -12,4 +12,3 @@ storiesOf('InfoBox', module)
   .add('Default', () => (
     <InfoBox />
   ));
-

@@ -16,6 +16,5 @@ storiesOf('Percentages', module)
     <Percentages values={{ up: 1000, down: 1000, total: 2000 }} />
   ))
   .add('Up', () => (
-    <Percentages  values={{ up: 27687, down: 60000, total: 87687 }} />
+    <Percentages values={{ up: 27687, down: 60000, total: 87687 }} />
   ));
-

@@ -1,0 +1,57 @@
+@import '../variables';
+
+.submit {
+  align-items: center;
+  background: url('../../assets/people.jpg');
+  color: $darknessGray;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font-family: 'Lato';
+  margin: 25px 0;
+  padding: 15px 25px;
+  position: relative;
+
+  &:before {
+    background-color: $white;
+    content: '';
+    left: 0;
+    height: 100%;
+    top: 0;
+    opacity: .8;
+    position: absolute;
+    width: 100%;
+  }
+
+  h4 {
+    color: $darknessGray;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 24px;
+    margin: 0;
+    position: relative;
+  }
+
+  button {
+    appearance: none;
+    background: transparent;
+    border: 2px solid $darknessGray;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 400;
+    height: 50px;
+    line-height: 24px;
+    padding: 5px 25px;
+    position: relative;
+  }
+
+  // Desktop
+  @media screen and (min-width: $desktop ) {
+    flex-direction: row;
+
+    button:hover {
+      background: $darknessGray;
+      color: $white;
+    }
+  }
+}

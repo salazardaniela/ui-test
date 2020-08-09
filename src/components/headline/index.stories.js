@@ -12,4 +12,3 @@ storiesOf('Headline', module)
   .add('Default', () => (
     <Headline title="Previous Rulings" />
   ));
-

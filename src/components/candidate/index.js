@@ -8,14 +8,19 @@ import Thumb from '../thumb';
 
 const Candidate = ({ item }) => (
   <div data-testid="candidate" className="candidate">
-    <div className="candidate-image" style={{ backgroundImage: `url(${item.imgSource})`}}>
-    </div>
+    <div className="candidate-image" style={{ backgroundImage: `url(${item.imgSource})` }} />
     <div className="candidate-information">
       <h3>{item.title}</h3>
       <p>{item.description}</p>
       <div className="candidate-ctas">
         <a href={item.url}>View Full Report</a>
-        <span>{item.time} in {item.category}</span>
+        <span>
+          {item.time}
+          {' '}
+          in
+          {' '}
+          {item.category}
+        </span>
       </div>
       <div className="candidate-result">
         <Thumb size="small" type="down" />
@@ -32,8 +37,8 @@ Candidate.propTypes = {
     description: PropTypes.string,
     time: PropTypes.string,
     category: PropTypes.string,
-    url: PropTypes.string
-  }).isRequired
+    url: PropTypes.string,
+  }).isRequired,
 };
 
 Candidate.displayName = 'Candidate Component';

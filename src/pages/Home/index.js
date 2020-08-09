@@ -11,27 +11,25 @@ import Submit from '../../components/submit';
 import Footer from '../../components/footer';
 
 // MockData
-import candidatesMock from '../../mockData/candidates.json'
+import candidatesMock from '../../mockData/candidates.json';
 
-const Home = () => {
-  return (
-    <div data-testid="home-page">
-      <NavBar />
-      <Banner />
-      <div className="main-wrapper">
-        <InfoBox />
-        <Headline title="Previous Rulings" />
-        <div className="grid-candidates">
-          {candidatesMock.items.map((character, idx) => (
-            <Candidate key={`character-${idx}`} item={character} />
-          ))}
-        </div>
-        <Submit />
-        <Footer />
+const Home = () => (
+  <div data-testid="home-page">
+    <NavBar />
+    <Banner />
+    <div className="main-wrapper">
+      <InfoBox />
+      <Headline title="Previous Rulings" />
+      <div className="grid-candidates">
+        {candidatesMock.items.map((character, idx) => (
+          <Candidate key={`character-${idx}`} item={character} />
+        ))}
       </div>
+      <Submit />
+      <Footer />
     </div>
-  );
-};
+  </div>
+);
 
 Home.displayName = 'Home Page';
 

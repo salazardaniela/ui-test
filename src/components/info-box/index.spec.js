@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { renderHook, act } from '@testing-library/react-hooks'
+import { renderHook } from '@testing-library/react-hooks';
 import InfoBox from '.';
 
 describe('InfoBox', () => {
@@ -15,14 +15,6 @@ describe('InfoBox', () => {
 
   it('should change the state', () => {
     const { result } = renderHook(() => InfoBox());
-    console.log(result)
-
     expect(result.current.showBox).toBe(false);
-
-    act(() => {
-      // fireEvent.click(button);
-    });
-
-    // expect(element).not.toBeInTheDocument();
-  })
+  });
 });

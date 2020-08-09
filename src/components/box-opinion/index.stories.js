@@ -12,4 +12,3 @@ storiesOf('BoxOpinion', module)
   .add('Default', () => (
     <BoxOpinion />
   ));
-

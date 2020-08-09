@@ -9,7 +9,7 @@ const item = {
   description: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.',
   time: '1 month ago',
   category: 'Business',
-  url: '/mark'
+  url: '/mark',
 };
 
 storiesOf('Candidate', module)
@@ -21,4 +21,3 @@ storiesOf('Candidate', module)
   .add('default', () => (
     <Candidate item={item} />
   ));
-

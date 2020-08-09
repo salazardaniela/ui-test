@@ -12,4 +12,3 @@ storiesOf('Banner', module)
   .add('Default', () => (
     <Banner />
   ));
-

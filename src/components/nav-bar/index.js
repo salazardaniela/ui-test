@@ -11,7 +11,7 @@ const NavBar = () => (
           <a href="/page">How It Works</a>
           <a href="/page">Log In / Sign Up</a>
         </nav>
-        <button className="button-icon">Search</button>
+        <button className="button-icon" type="button">Search</button>
       </div>
     </div>
   </section>
