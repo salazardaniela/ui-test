@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Dev Notes
+
+This project has an automatic eslint setup to keep a style based in `airbnb standard`. It has some exceptions or invalidations in this standard to do flexible and agile.
+`Husky` set to prevent eslint errors, and it runs with each commit.
+Exist a `Pull Request template` to give more information about each new feature.
+`storybook` shows all components with different variation available.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -16,6 +23,18 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn clear`
+
+Delete node_modules folder.
+
+### `yarn lint`
+
+Run eslint validation to keep code standards.
+
+### `yarn storybook`
+
+Show all components available with different variations.
 
 ### `yarn build`
 
