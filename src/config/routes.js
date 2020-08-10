@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Layout Pages
 import Home from '../pages/Home';
+import Generic from '../pages/Generic';
 
 const Routes = () => (
   <Router>
     <Switch>
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
+      <Route path="/:name" component={Generic} />
     </Switch>
   </Router>
 );

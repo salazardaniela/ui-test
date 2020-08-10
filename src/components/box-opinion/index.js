@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import PropTypes from 'prop-types';
 import './box-opinion.scss';
@@ -7,15 +7,19 @@ import './box-opinion.scss';
  * Components
  */
 import Thumb from '../thumb';
-
+import Percentages from '../percentages';
 /**
  * BoxOpinion
  * @param {Object} {
  *  externalLink: link to external website
  * }
  */
-const BoxOpinion = ({ externalLink }) => {
+const BoxOpinion = ({ externalLink, setRegister, setClickedValue }) => {
   const [vote, setVote] = useState();
+
+  useEffect(() => {
+    setVote(setClickedValue);
+  }, [setClickedValue]);
 
   return (
     <section data-testid="box-opinion" className="box-opinion">
@@ -30,8 +34,15 @@ const BoxOpinion = ({ externalLink }) => {
             {externalLink && (<a href={externalLink}>More Information</a>)}
             <h3 className="box-opinion-veredict">What’s Your Verdict?</h3>
           </div>
-          <Thumb type="up" size="big" setNewValue={(value) => setVote(value)} />
-          <Thumb type="down" size="big" setNewValue={(value) => setVote(value)} />
+          <Percentages
+            showPercentage={false}
+            idName="pope"
+            size="big"
+            setClicked={(value) => {
+              setVote(value);
+              setRegister(true);
+            }}
+          />
         </div>
       ) : (
         <div>
@@ -68,6 +79,8 @@ const BoxOpinion = ({ externalLink }) => {
  */
 BoxOpinion.propTypes = {
   externalLink: PropTypes.string,
+  setRegister: PropTypes.func,
+  setClickedValue: PropTypes.func,
 };
 
 /**
@@ -75,6 +88,8 @@ BoxOpinion.propTypes = {
  */
 BoxOpinion.defaultProps = {
   externalLink: 'http://wikipedia.com',
+  setRegister: () => {},
+  setClickedValue: () => {},
 };
 
 BoxOpinion.displayName = 'BoxOpinion Component';

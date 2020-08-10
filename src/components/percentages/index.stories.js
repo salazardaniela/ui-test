@@ -9,12 +9,9 @@ storiesOf('Percentages', module)
       sidebar: Readme,
     },
   })
-  .add('Down', () => (
-    <Percentages idName="mark" values={{ up: 86797, down: 890, total: 87687 }} />
-  ))
   .add('Equal', () => (
-    <Percentages idName="cristina" values={{ up: 1000, down: 1000, total: 2000 }} />
+    <Percentages idName="cristina" />
   ))
-  .add('Up', () => (
-    <Percentages idName="malala" values={{ up: 27687, down: 60000, total: 87687 }} />
+  .add('Non Show Percentages', () => (
+    <Percentages idName="malala" showPercentage={false} />
   ));

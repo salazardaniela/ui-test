@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './banner.scss';
 
@@ -7,6 +7,7 @@ import './banner.scss';
  */
 import Countdown from '../countdown';
 import BoxOpinion from '../box-opinion';
+import Percentages from '../percentages';
 
 /**
  * Banner Component
@@ -14,12 +15,24 @@ import BoxOpinion from '../box-opinion';
  *  externalLink: string required by a component
  * }
  */
-const Banner = ({ externalLink }) => (
-  <section data-testid="banner" className="banner">
-    <Countdown futureDate="2020-09-01" />
-    <BoxOpinion externalLink={externalLink} />
-  </section>
-);
+const Banner = ({ externalLink }) => {
+  const [showPercentage, setShowPercentage] = useState(false);
+  const [valueThumb, setValueThumb] = useState(false);
+  return (
+    <section data-testid="banner" className="banner">
+      <div className="banner-footer">
+        {showPercentage
+          ? <Percentages idName="pope" showPercentage setClicked={setValueThumb} />
+          : <Countdown futureDate="2020-09-01" />}
+      </div>
+      <BoxOpinion
+        setClickedValue={valueThumb}
+        setRegister={setShowPercentage}
+        externalLink={externalLink}
+      />
+    </section>
+  );
+};
 
 /**
  * Props definition

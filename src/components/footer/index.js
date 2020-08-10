@@ -9,7 +9,7 @@ import './footer.scss';
 const Footer = () => (
   <div data-testid="footer" className="footer">
     <nav>
-      <a className="footer-link" href="/term">Terms and Conditions</a>
+      <a className="footer-link" href="/terms">Terms and Conditions</a>
       <a className="footer-link" href="/privacy">Privacy Policy</a>
       <a className="footer-link" href="/contact">Contact Us</a>
     </nav>

@@ -16,7 +16,9 @@ import { setResults, getResults } from '../../config/helpers';
  * Percentages Component
  * @param {Object} {} Component properties
  */
-const Percentages = ({ setHighestValue, idName }) => {
+const Percentages = ({
+  setHighestValue, idName, showPercentage, size, setClicked,
+}) => {
   const [values, setValues] = useState(getResults({ idName }));
 
   /**
@@ -39,16 +41,19 @@ const Percentages = ({ setHighestValue, idName }) => {
     upItem: Math.floor((values[idName].up * 100) / values[idName].total),
   };
 
+  const widthUpDynamic = showPercentage ? `${numbers.upItem}%` : '50%';
+  const widthDownDynamic = showPercentage ? `${numbers.downItem}%` : '50%';
+
   /**
    * Comonent Template
    */
   return (
     <div data-testid="percentages" className="percentages">
-      <div className="percentage-item" style={{ width: `${numbers.upItem}%` }}>
+      <div className="percentage-item" style={{ width: `${widthUpDynamic}` }}>
         <Thumb
           type="up"
-          size="medium"
-          showPercentage
+          size={size}
+          showPercentage={showPercentage}
           value={values[idName] && numbers.upItem}
           setNewValue={() => {
             const newValue = { ...values };
@@ -57,14 +62,15 @@ const Percentages = ({ setHighestValue, idName }) => {
 
             setValues(newValue);
             setResults({ itemResults: newValue });
+            setClicked('up');
           }}
         />
       </div>
-      <div className="percentage-item" style={{ width: `${numbers.downItem}%` }}>
+      <div className="percentage-item" style={{ width: `${widthDownDynamic}` }}>
         <Thumb
           type="down"
-          size="medium"
-          showPercentage
+          size={size}
+          showPercentage={showPercentage}
           value={values[idName] && numbers.downItem}
           setNewValue={() => {
             const newValue = { ...values };
@@ -73,6 +79,7 @@ const Percentages = ({ setHighestValue, idName }) => {
 
             setValues(newValue);
             setResults({ itemResults: newValue });
+            setClicked('down');
           }}
         />
       </div>
@@ -86,6 +93,9 @@ const Percentages = ({ setHighestValue, idName }) => {
 Percentages.propTypes = {
   setHighestValue: PropTypes.func,
   idName: PropTypes.string.isRequired,
+  showPercentage: PropTypes.bool,
+  size: PropTypes.string,
+  setClicked: PropTypes.func,
 };
 
 /**
@@ -93,6 +103,9 @@ Percentages.propTypes = {
  */
 Percentages.defaultProps = {
   setHighestValue: () => {},
+  setClicked: () => {},
+  showPercentage: true,
+  size: 'medium',
 };
 
 Percentages.displayName = 'Percentages Component';
