@@ -1,0 +1,132 @@
+@import '../variables';
+
+.box-opinion {
+  color: $white;
+  font-family: 'Lato';
+  margin: 0 auto;
+  max-width: 500px;
+
+  .box-opinion-info {
+    backdrop-filter: blur(10px);
+    background: $alphaDarkGray;
+    padding: 10px 20px;
+  }
+
+  h2 {
+    font-size: 60px;
+    margin-bottom: 40px;
+    margin-top: 0;
+
+    span {
+      display: block;
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+
+  .box-opinion-txt {
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 28px;
+  }
+
+  .box-opinion-veredict {
+    font-size: 20px;
+    margin-top: 40px;
+  }
+
+  .thumb {
+    display: inline-block;
+    width: 100%;
+
+    .icon {
+      display: block;
+      margin: auto;
+    }
+  }
+
+  a {
+    color: $white;
+
+    &:before {
+      background-image: url('../../icons/wiki.png');
+      content: '';
+      display: inline-block;
+      height: 12px;
+      margin-right: 6px;
+      width: 16px;
+    }
+  }
+
+  .active-vote {
+    font-size: 35px;
+    font-weight: 300;
+    margin: 0;
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .your-vote {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 35px 0;
+    position: relative;
+
+    .thumb {
+      height: 100px;
+      width: 100px;
+    }
+
+    p {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 0 25px;
+    }
+  }
+
+  .write-btn {
+    appearance: none;
+    align-items: center;
+    background: transparent;
+    border: 2px solid $white;
+    color: $white;
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    font-family: 'Lato';
+    font-weight: 400;
+    justify-content: center;
+    height: 66px;
+    margin: 0 auto 10px;
+    width: 250px;
+
+    &:before {
+      background: url('../../icons/msj.png') no-repeat center;
+      content: '';
+      display: inline-block;
+      height: 24px;
+      margin-right: 10px;
+      width: 24px;
+    }
+
+    &:hover {
+      background: $white;
+      color: $darknessGray;
+
+      &:before {
+        filter: invert(1);
+      }
+    }
+  }
+  
+  // Desktop
+  @media screen and (min-width: $desktop) {
+    .box-opinion-info {
+      padding: 30px;
+    }
+  }
+}

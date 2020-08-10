@@ -1,0 +1,11 @@
+@import '../../components/variables';
+
+.grid-candidates {
+  display: grid;
+  grid-gap: 25px;
+
+  // Desktop
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: 550px 1fr;
+  }
+}

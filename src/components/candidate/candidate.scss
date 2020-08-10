@@ -1,0 +1,75 @@
+@import '../variables';
+
+.candidate {
+  font-family: 'Lato';
+  height: 550px;
+  overflow: hidden;
+  position: relative;
+
+  .candidate-image {
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .candidate-result {
+    left: 0;
+    position: absolute;
+    top: 30px;
+  }
+
+  .candidate-information {
+    background: linear-gradient( rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+    bottom: 56px;
+    box-sizing: border-box;
+    color: $white;
+    padding: 20px 20px 30px 40px;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+
+    h3 {
+      font-size: 45px;
+      line-height: 48px;
+      margin: 0 0 20px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .candidate-ctas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      border: 1px solid $white;
+      color: $white;
+      display: inline-block;
+      padding: 8px 25px;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 400;
+      text-align: right;
+      width: 80px;
+    }
+  }
+
+  .percentages {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
