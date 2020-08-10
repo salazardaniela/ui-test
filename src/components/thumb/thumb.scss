@@ -1,0 +1,83 @@
+@import '../variables';
+
+.thumb {
+  appearance: none;
+  align-items: center;
+  background: $alphaGreen;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Lato';
+  padding: 5px;
+  width: 100%;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &:active {
+    filter: saturate(2.5);
+    opacity: 1;
+  }
+  
+  .icon-thumb {
+    background: url('../../icons/thumb.png') no-repeat center;
+    background-size: contain;
+    display: inline-block;
+    height: 18px;
+    transform: rotate(180deg);
+    width: 18px;
+  }
+
+  .thumb-percentage {
+    color: $white;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 30px;
+    margin: 0 0 0 10px;
+
+    span {
+      font-size: 21px;
+    }
+  }
+
+  &.small {
+    background-color: $green;
+
+    &.down {
+      background-color: $orange;
+    }
+  }
+
+  &.medium {
+    padding: 10px;
+
+    .icon-thumb {
+      height: 28px;
+      width: 28px;
+    }
+  }
+
+  &.big {
+    padding: 20px;
+
+    .icon-thumb {
+      height: 36px;
+      width: 36px;
+    }
+  }
+
+  &.down {
+    background-color: $alphaOrange;
+    flex-direction: row-reverse;
+
+    .thumb-percentage {
+      margin: 0 10px 0 0;
+    }
+
+    .icon-thumb {
+      transform: rotateX(0);
+    }
+  }
+}

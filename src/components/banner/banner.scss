@@ -1,0 +1,29 @@
+@import '../variables';
+
+.banner {
+  background: url('../../assets/francisco.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 75px;
+  padding-top: 90px;
+  position: relative;
+  width: 100%;
+
+  .banner-footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%
+  }
+  
+  // Desktop
+  @media screen and (min-width: $desktop) {
+    height: 740px;
+    padding: 0;
+
+    .box-opinion {
+      left: calc(50% - 515px);
+      top: 140px;
+      position: absolute;
+    }
+  }
+}
